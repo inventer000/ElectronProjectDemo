@@ -1,0 +1,48 @@
+{
+  "name": "Readit",
+  "productName": "Readit",
+  "version": "1.0.0",
+  "description": "Master Electron Project",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron .",
+    "reset": "git reset --hard",
+    "build": "electron-builder -w",
+    "win-cert": "electron-builder create-self-signed-cert -p stackacademytv"
+  },
+  "repository": "https://github.com/stackacademytv/master-electron",
+  "homepage": "https://github.com/stackacademytv/master-electron",
+  "keywords": [
+    "Electron",
+    "Master Electron",
+    "demo"
+  ],
+  "author": "Stackacademytv <john@doe.com>",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^9.0.0",
+    "electron-builder": "^24.13.3",
+    "nodemon": "^2.0.0"
+  },
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  },
+  "build": {
+    "appId": "com.stackacademytv.readit",
+    "copyright": "Copyright Stackacademytv",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win": {
+      "certificateFile": "private/stackacademytv.pfx",
+      "certificatePassword": "",
+      "publisherName": "stackacademytv"
+    },
+    "linux": {
+      "category": "Utility",
+      "target": "deb"
+    }
+  }
+}
