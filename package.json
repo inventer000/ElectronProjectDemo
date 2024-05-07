@@ -1,7 +1,7 @@
 {
   "name": "Readit",
   "productName": "Readit",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Master Electron Project",
   "main": "main.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "watch": "nodemon --exec electron .",
     "reset": "git reset --hard",
     "build": "electron-builder -w",
+    "release": "electron-builder -w --publish onTagOrDraft",
     "win-cert": "electron-builder create-self-signed-cert -p stackacademytv"
   },
   "repository": "https://github.com/stackacademytv/master-electron",
@@ -26,11 +27,17 @@
     "nodemon": "^2.0.0"
   },
   "dependencies": {
+    "electron-log": "^5.1.2",
+    "electron-updater": "^6.1.8",
     "electron-window-state": "^5.0.3"
   },
   "build": {
     "appId": "com.stackacademytv.readit",
     "copyright": "Copyright Stackacademytv",
+    "publish": {
+      "provider": "github",
+      "releaseType": "release"
+    },
     "mac": {
       "category": "public.app-category.productivity",
       "target": "dmg"
